@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/angular-loading-bar/0.9.0/loading-bar.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+
+
+    <link rel="stylesheet" href="http://static.x-dva.com/resources/css/font.css">
+
+
+    <script src="https://cdn.bootcss.com/require.js/2.3.2/require.min.js" defer async="true" data-main="/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>JavaScript Implicit Client</h1>
+        </header>
+        <div class="row">
+            <ul class="list-unstyled list-inline">
+                <li><a class="btn btn-primary" href="index.html">Home</a></li>
+                <li><button class="btn btn-default popup" data-scope='openid' data-type='id_token'>Login popup</button></li>
+                <li><button class="btn btn-default request" data-scope='openid' data-type='id_token'>Login Only</button></li>
+                <li><button class="btn btn-default request" data-scope='openid profile email' data-type='id_token'>Login With Profile</button></li>
+                <li><button class="btn btn-default request" data-scope='openid profile email read write' data-type='id_token token'>Login With Profile and Access Token</button></li>
+                <li><button class="btn btn-default request" data-scope='read write' data-type='token'>Access Token Only</button></li>
+                <li><button class="btn btn-primary call">Call Service</button></li>
+                <li><button class="btn btn-info logout">Logout</button></li>
+            </ul>
+        </div>
+        <div class="row">
+            <ul class="list-unstyled list-inline"></ul>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">Authorization Response</div>
+                <div class="panel-body">
+                    <pre id="response"></pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">ID Token Contents</div>
+                    <div class="panel-body">
+                        <pre id="id-token"></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Access Token</div>
+                    <div class="panel-body">
+                        <pre id="access-token"></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Ajax Result</div>
+                    <div class="panel-body">
+                        <pre id="ajax-result"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="oidc-client.js"></script>
+    <script src="oauth.js"></script>
+</body>
+</html>
