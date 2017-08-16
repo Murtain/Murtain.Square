@@ -1,4 +1,6 @@
-﻿using Murtain.Auditing.Startup;
+﻿using Murtain.Dependency;
+using Murtain.Dependency.ConventionalRegistrars;
+using Murtain.Auditing.Startup;
 using Murtain.Configuration.Startup;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Murtain.Domain.Services;
 
 namespace Murtain.Square
 {
@@ -20,7 +23,6 @@ namespace Murtain.Square
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             StartupConfig.RegisterDependency(config =>
             {
                 //应用程序配置

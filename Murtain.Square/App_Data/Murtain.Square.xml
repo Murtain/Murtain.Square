@@ -4,6 +4,18 @@
         <name>Murtain.Square</name>
     </assembly>
     <members>
+        <member name="T:Murtain.Square.Controllers.FocusController">
+            <summary>
+            任务清单
+            </summary>
+        </member>
+        <member name="M:Murtain.Square.Controllers.FocusController.FocusAddAsync(Murtain.Square.SDK.Focus.FocusAddAsyncRequest)">
+            <summary>
+            添加任务
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
         <member name="T:Murtain.Square.Controllers.SenetenceController">
             <summary>
             名人名言

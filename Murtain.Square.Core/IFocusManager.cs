@@ -12,7 +12,7 @@ namespace Murtain.Square.Core
     {
         Task FocusAddAsync(Domain.Entities.Focus focus);
         Task FocusRemoveAsync(long id);
-        Task FocusCompletedAsync(long id);
+        Task FocusToggleCompletedAsync(long id);
         Task FocusStarAsync(long id);
         Task<IEnumerable<Focus>> GetFocusAsync();
     }

@@ -9,7 +9,7 @@ using Murtain.AutoMapper;
 
 namespace Murtain.Square.Application
 {
-    public class FocusApplicationService : IFocusApplicationService 
+    public class FocusApplicationService : IFocusApplicationService
     {
         private readonly IFocusManager focusManager;
 
@@ -18,14 +18,18 @@ namespace Murtain.Square.Application
             this.focusManager = focusManager;
         }
 
-        public async Task FocusAddAsync(SDK.Domain.Focus focus)
+        public async Task FocusAddAsync(string content)
         {
-            await focusManager.FocusAddAsync(focus.MapTo<Domain.Entities.Focus>());
+            await focusManager.FocusAddAsync(new Domain.Entities.Focus
+            {
+                Content = content,
+                Status = SDK.Domain.Status.Normal
+            });
         }
 
-        public async Task FocusCompletedAsync(long id)
+        public async Task FocusToggleCompletedAsync(long id)
         {
-            await focusManager.FocusCompletedAsync(id);
+            await focusManager.FocusToggleCompletedAsync(id);
         }
 
         public async Task FocusRemoveAsync(long id)

@@ -1,5 +1,6 @@
 ﻿using Murtain.AutoMapper;
 using Murtain.Domain.Entities.Audited;
+using Murtain.Square.SDK.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,13 +26,4 @@ namespace Murtain.Square.Domain.Entities
         public Status Status { get; set; }
     }
 
-    /// <summary>
-    /// 任务状态
-    /// </summary>
-    public enum Status
-    {
-        Focus,
-        Completed,
-        Expired
-    }
 }

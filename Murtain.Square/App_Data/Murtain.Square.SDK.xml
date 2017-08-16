@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Murtain.Square.SDK</name>
+    </assembly>
+    <members>
+        <member name="P:Murtain.Square.SDK.Domain.Focus.Id">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Domain.Focus.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Domain.Focus.Status">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="T:Murtain.Square.SDK.Domain.Status">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Domain.Status.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Domain.Status.Completed">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Domain.Status.Expired">
+            <summary>
+            已过期
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Domain.FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT">
+            <summary>
+            任务不存在
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Domain.FOCUS_REMOVE_RETURN_CODE.FOCUS_NOT_EXSIT">
+            <summary>
+            任务不存在
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Focus.FocusAddAsyncRequest.Content">
+            <summary>
+            任务内容
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Focus.FOCUS_ADD_RETURN_CODE.FOCUS_ADD_FAILED">
+            <summary>
+            已过期
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Focus.FETCH_FOCUS_RETURN_CODE.FOCUS_FETCH_FAILED">
+            <summary>
+            任务清单查询失败
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -9,9 +9,9 @@ namespace Murtain.Square.Application
 {
     public interface IFocusApplicationService : IApplicationService
     {
-        Task FocusAddAsync(SDK.Domain.Focus focus);
+        Task FocusAddAsync(string content);
         Task FocusRemoveAsync(long id);
-        Task FocusCompletedAsync(long id);
+        Task FocusToggleCompletedAsync(long id);
         Task FocusStarAsync(long id);
         Task<IEnumerable<SDK.Domain.Focus>> GetFocusAsync();
     }

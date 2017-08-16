@@ -26,7 +26,7 @@ namespace Murtain.Square.Core
             await focusRepository.AddAsync(focus);
         }
 
-        public async Task FocusCompletedAsync(long id)
+        public async Task FocusToggleCompletedAsync(long id)
         {
             var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
             if (focus == null)
@@ -34,7 +34,15 @@ namespace Murtain.Square.Core
                 throw new UserFriendlyExceprion(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
-            focus.Status = Status.Completed;
+            if (focus.Status == Status.Normal)
+            {
+                focus.Status = Status.Completed;
+            }
+
+            if (focus.Status == Status.Completed || focus.Status == Status.Focus)
+            {
+                focus.Status = Status.Completed;
+            }
             await focusRepository.UpdatePropertyAsync(focus, x => new { x.Status });
         }
 
@@ -57,7 +65,7 @@ namespace Murtain.Square.Core
                 throw new UserFriendlyExceprion(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
-            focus.Status = Status.Focus;
+            focus.Status = Status.Normal;
             await focusRepository.UpdatePropertyAsync(focus, x => new { x.Status });
         }
 

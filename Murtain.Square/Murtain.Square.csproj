@@ -58,8 +58,8 @@
     <Reference Include="Autofac.Integration.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Owin.4.0.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Integration.WebApi.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.WebApi2.Owin.4.0.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
@@ -101,14 +101,14 @@
     <Reference Include="Murtain.EntityFramework, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Murtain.EntityFramework.1.0.0.7\lib\net452\Murtain.EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.SDK, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.SDK.1.0.0.7\lib\net452\Murtain.SDK.dll</HintPath>
+    <Reference Include="Murtain.SDK, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.SDK.1.0.0.8\lib\net452\Murtain.SDK.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.Web, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.Web.1.0.0.7\lib\net452\Murtain.Web.dll</HintPath>
+    <Reference Include="Murtain.Web, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.Web.1.0.0.9\lib\net452\Murtain.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.Web.ApiDocument, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.Web.ApiDocument.1.0.0.22\lib\net452\Murtain.Web.ApiDocument.dll</HintPath>
+    <Reference Include="Murtain.Web.ApiDocument, Version=1.0.0.23, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.Web.ApiDocument.1.0.0.23\lib\net452\Murtain.Web.ApiDocument.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -271,6 +271,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\FocusController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SenetenceController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
@@ -308,7 +309,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\HelpPage\Views\Document\Api.cshtml" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
@@ -331,6 +331,7 @@
     <Content Include="Areas\HelpPage\Views\Document\Readme.cshtml" />
     <Content Include="Areas\HelpPage\Views\Document\Model.cshtml" />
     <Content Include="Areas\HelpPage\Views\Document\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Document\Api.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -370,6 +371,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Murtain.Square.Application\Murtain.Square.Application.csproj">
+      <Project>{c1050b65-1f75-4717-9b0e-40aa378db4b7}</Project>
+      <Name>Murtain.Square.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Murtain.Square.Core\Murtain.Square.Core.csproj">
+      <Project>{c6ccb908-0630-46a8-a66a-5166558daf2a}</Project>
+      <Name>Murtain.Square.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Murtain.Square.Domain\Murtain.Square.Domain.csproj">
+      <Project>{3816d3cb-f8c5-437d-80a1-cb9b0531d030}</Project>
+      <Name>Murtain.Square.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Murtain.Square.Infrastructure\Murtain.Square.Infrastructure.csproj">
+      <Project>{0a479e0a-1813-4762-8bdb-91f08e2ced65}</Project>
+      <Name>Murtain.Square.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Murtain.Square.SDK\Murtain.Square.SDK.csproj">
+      <Project>{d3806f52-7eee-4be4-8dde-5a2ddc7e170d}</Project>
+      <Name>Murtain.Square.SDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

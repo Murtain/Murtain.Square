@@ -1,4 +1,4 @@
-﻿using Murtain.SDK;
+﻿using Murtain.SDK.Models;
 using Murtain.SDK.Attributes;
 using Murtain.Web.ApiDocument.Areas.HelpPage.ModelDescriptions;
 using Murtain.Web.ApiDocument.Areas.HelpPage.Models;
@@ -150,15 +150,6 @@ namespace Murtain.Web.ApiDocument.Areas.HelpPage.Controllers.WebApi
             {
                 returnModel.UriParameters.Add(item);
             }
-            //foreach (var item in apiModel.SampleRequests)
-            //{
-            //    returnModel.SampleRequests.Add(item);
-            //}
-            //foreach (var item in apiModel.SampleResponses)
-            //{
-            //    returnModel.SampleResponses.Add(item);
-            //}
-
 
             var jsonSampleAttribute = ((System.Web.Http.Controllers.ReflectedHttpActionDescriptor)apiModel.ApiDescription.ActionDescriptor).MethodInfo.GetCustomAttributes(false).FirstOrDefault(x => x is JsonSampleAttribute) as JsonSampleAttribute;
             if (jsonSampleAttribute != null)
