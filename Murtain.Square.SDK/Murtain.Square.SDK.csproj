@@ -37,11 +37,11 @@
     <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.AutoMapper, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.AutoMapper.1.0.0.7\lib\net452\Murtain.AutoMapper.dll</HintPath>
+    <Reference Include="Murtain.AutoMapper, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.AutoMapper.1.0.0.9\lib\net452\Murtain.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.SDK, Version=1.0.0.8, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.SDK.1.0.0.8\lib\net452\Murtain.SDK.dll</HintPath>
+    <Reference Include="Murtain.SDK, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.SDK.1.0.0.9\lib\net452\Murtain.SDK.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>

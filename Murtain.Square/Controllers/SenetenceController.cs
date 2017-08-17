@@ -42,14 +42,14 @@ namespace Murtain.Square.Controllers
 
                 if (resp.error_code != 0 || resp == null)
                 {
-                    throw new UserFriendlyExceprion(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED);
+                    throw new UserFriendlyException(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED);
                 }
 
                 return resp.result;
             }
             catch (WebException)
             {
-                throw new UserFriendlyExceprion(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE);
+                throw new UserFriendlyException(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE);
             }
         }
     }

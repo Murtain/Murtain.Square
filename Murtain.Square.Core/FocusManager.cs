@@ -31,7 +31,7 @@ namespace Murtain.Square.Core
             var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
             if (focus == null)
             {
-                throw new UserFriendlyExceprion(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
+                throw new UserFriendlyException(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
             if (focus.Status == Status.Normal)
@@ -51,7 +51,7 @@ namespace Murtain.Square.Core
             var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
             if (focus == null)
             {
-                throw new UserFriendlyExceprion(FOCUS_REMOVE_RETURN_CODE.FOCUS_NOT_EXSIT);
+                throw new UserFriendlyException(FOCUS_REMOVE_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
             await focusRepository.RemoveAsync(focus);
@@ -62,7 +62,7 @@ namespace Murtain.Square.Core
             var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
             if (focus == null)
             {
-                throw new UserFriendlyExceprion(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
+                throw new UserFriendlyException(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
             focus.Status = Status.Normal;

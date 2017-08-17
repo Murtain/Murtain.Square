@@ -42,12 +42,12 @@ namespace Murtain.Square.Controllers
 
                 if (response == "-3")
                 {
-                    throw new UserFriendlyExceprion(FETCH_CITY_RETURN_CODE.INVALID_IP_ADDRESS);
+                    throw new UserFriendlyException(FETCH_CITY_RETURN_CODE.INVALID_IP_ADDRESS);
                 }
 
                 if (response == "-2")
                 {
-                    throw new UserFriendlyExceprion(FETCH_CITY_RETURN_CODE.CANT_FOUND_MATCH_CITY);
+                    throw new UserFriendlyException(FETCH_CITY_RETURN_CODE.CANT_FOUND_MATCH_CITY);
                 }
 
                 return JsonConvert.DeserializeObject<City>(response);
@@ -56,7 +56,7 @@ namespace Murtain.Square.Controllers
             }
             catch (WebException)
             {
-                throw new UserFriendlyExceprion(FETCH_CITY_RETURN_CODE.SINA_CITY_QUERY_SERVICE_NOT_UNAVAILABLE);
+                throw new UserFriendlyException(FETCH_CITY_RETURN_CODE.SINA_CITY_QUERY_SERVICE_NOT_UNAVAILABLE);
             }
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Murtain.Square.Controllers
 
                 if (resp.error_code != 0 || resp == null)
                 {
-                    throw new UserFriendlyExceprion(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_FAILED);
+                    throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_FAILED);
                 }
 
                 return resp.result;
@@ -92,7 +92,7 @@ namespace Murtain.Square.Controllers
             }
             catch (WebException)
             {
-                throw new UserFriendlyExceprion(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE);
+                throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE);
             }
         }
 
@@ -115,7 +115,7 @@ namespace Murtain.Square.Controllers
             }
             catch (Exception)
             {
-                throw new UserFriendlyExceprion(FETCH_WEATHER_AUTO_RETURN_CODE.FETCH_CLIENT_IP_CITY_FALIED);
+                throw new UserFriendlyException(FETCH_WEATHER_AUTO_RETURN_CODE.FETCH_CLIENT_IP_CITY_FALIED);
             }
 
             try
@@ -125,7 +125,7 @@ namespace Murtain.Square.Controllers
             }
             catch (Exception)
             {
-                throw new UserFriendlyExceprion(FETCH_WEATHER_AUTO_RETURN_CODE.FETCH_CLIENT_CITY_WEATHER_FALIED);
+                throw new UserFriendlyException(FETCH_WEATHER_AUTO_RETURN_CODE.FETCH_CLIENT_CITY_WEATHER_FALIED);
             }
         }
 

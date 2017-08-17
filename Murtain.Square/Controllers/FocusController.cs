@@ -42,6 +42,7 @@ namespace Murtain.Square.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Route("api/focus/{id}")]
         public async Task FocusRemoveAsync(long id)
         {
             await focusApplicationService.FocusRemoveAsync(id);
@@ -52,6 +53,7 @@ namespace Murtain.Square.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
+        [Route("api/focus-complete/{id}")]
         public async Task FocusToggleCompletedAsync(long id)
         {
             await focusApplicationService.FocusToggleCompletedAsync(id);
@@ -62,6 +64,7 @@ namespace Murtain.Square.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
+        [Route("api/focus-star/{id}")]
         public async Task FocusStarAsync(long id)
         {
             await focusApplicationService.FocusStarAsync(id);
