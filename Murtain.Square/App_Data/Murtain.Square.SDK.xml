@@ -39,6 +39,11 @@
             已过期
             </summary>
         </member>
+        <member name="F:Murtain.Square.SDK.Domain.Status.Focus">
+            <summary>
+            焦点任务
+            </summary>
+        </member>
         <member name="F:Murtain.Square.SDK.Domain.FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT">
             <summary>
             任务不存在

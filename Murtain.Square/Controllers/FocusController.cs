@@ -26,7 +26,7 @@ namespace Murtain.Square.Controllers
         /// <summary>
         /// 添加任务
         /// </summary>
-        /// <param name="content"></param>
+        /// <param name="input"></param>
         /// <returns></returns>
         [HttpPost]
         [Route("api/focus")]
@@ -44,6 +44,7 @@ namespace Murtain.Square.Controllers
         [HttpDelete]
         public async Task FocusRemoveAsync(long id)
         {
+            await focusApplicationService.FocusRemoveAsync(id);
         }
         /// <summary>
         /// 标记/取消标记任务完成状态
@@ -53,6 +54,7 @@ namespace Murtain.Square.Controllers
         [HttpPut]
         public async Task FocusToggleCompletedAsync(long id)
         {
+            await focusApplicationService.FocusToggleCompletedAsync(id);
         }
         /// <summary>
         /// 星标任务
@@ -62,6 +64,7 @@ namespace Murtain.Square.Controllers
         [HttpPut]
         public async Task FocusStarAsync(long id)
         {
+            await focusApplicationService.FocusStarAsync(id);
         }
         /// <summary>
         /// 获取任务清单
