@@ -58,6 +58,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Murtain.Square.Controllers.FocusController.GetFocusStarAsync">
+            <summary>
+            获取星标任务
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Murtain.Square.Controllers.SenetenceController">
             <summary>
             名人名言

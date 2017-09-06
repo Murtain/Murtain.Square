@@ -51,6 +51,7 @@
     <Compile Include="Domain\Focus.cs" />
     <Compile Include="Focus\FocusAddAsyncRequest.cs" />
     <Compile Include="Focus\GetFocusAsyncRequest.cs" />
+    <Compile Include="Focus\GetFocusStarAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

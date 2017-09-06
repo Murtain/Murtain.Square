@@ -42,6 +42,11 @@ namespace Murtain.Square.SDK.Domain
     public enum Status
     {
         /// <summary>
+        /// 焦点任务
+        /// </summary>
+        [Description("焦点任务")]
+        Focus,
+        /// <summary>
         /// 正常
         /// </summary>
         [Description("正常")]
@@ -56,11 +61,6 @@ namespace Murtain.Square.SDK.Domain
         /// </summary>
         [Description("已过期")]
         Expired,
-        /// <summary>
-        /// 焦点任务
-        /// </summary>
-        [Description("焦点任务")]
-        Focus,
     }
 
     public enum FOCUS_COMPLETED_RETURN_CODE

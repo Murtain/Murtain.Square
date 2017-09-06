@@ -36,6 +36,9 @@
     <Reference Include="Autofac.Extras.DynamicProxy2, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Extras.DynamicProxy2.3.0.7\lib\net40\Autofac.Extras.DynamicProxy2.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
@@ -57,7 +60,9 @@
     <Reference Include="Murtain, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Murtain.1.0.0.10\lib\net452\Murtain.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.AutoMapper, Version=1.0.0.9, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Murtain.AutoMapper, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.AutoMapper.1.0.0.11\lib\net452\Murtain.AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Murtain.EntityFramework, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Murtain.EntityFramework.1.0.0.11\lib\net452\Murtain.EntityFramework.dll</HintPath>
     </Reference>

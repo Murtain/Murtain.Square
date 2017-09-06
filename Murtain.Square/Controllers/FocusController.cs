@@ -81,5 +81,15 @@ namespace Murtain.Square.Controllers
         {
             return await focusApplicationService.GetFocusAsync();
         }
+        /// <summary>
+        /// 获取星标任务
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("api/focus-star")]
+        public async Task<SDK.Domain.Focus> GetFocusStarAsync()
+        {
+            return await focusApplicationService.GetFocusStarAsync();
+        }
     }
 }

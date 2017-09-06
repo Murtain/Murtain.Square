@@ -15,5 +15,6 @@ namespace Murtain.Square.Core
         Task FocusToggleCompletedAsync(long id);
         Task FocusStarAsync(long id);
         Task<List<Focus>> GetFocusAsync();
+        Task<Focus> GetFocusStarAsync();
     }
 }

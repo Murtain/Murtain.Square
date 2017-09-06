@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Murtain.Square.SDK;
 using Murtain.AutoMapper;
 using AutoMapper;
+using Murtain.Square.SDK.Domain;
 
 namespace Murtain.Square.Application
 {
@@ -47,6 +48,17 @@ namespace Murtain.Square.Application
         {
             var focuses = await focusManager.GetFocusAsync();
             return focuses.MapTo<List<SDK.Domain.Focus>>();
+        }
+
+        public async Task<Focus> GetFocusStarAsync()
+        {
+            var focus = await focusManager.GetFocusStarAsync();
+
+            if (focus == null)
+            {
+                return null;
+            }
+            return focus.MapTo<SDK.Domain.Focus>();
         }
     }
 }
