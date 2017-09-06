@@ -92,20 +92,20 @@
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.1.0.0.9\lib\net452\Murtain.dll</HintPath>
+    <Reference Include="Murtain, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.1.0.0.10\lib\net452\Murtain.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.AutoMapper, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.AutoMapper.1.0.0.9\lib\net452\Murtain.AutoMapper.dll</HintPath>
+    <Reference Include="Murtain.AutoMapper, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.AutoMapper.1.0.0.11\lib\net452\Murtain.AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.EntityFramework, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.EntityFramework.1.0.0.9\lib\net452\Murtain.EntityFramework.dll</HintPath>
+    <Reference Include="Murtain.EntityFramework, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.EntityFramework.1.0.0.11\lib\net452\Murtain.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Murtain.SDK, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Murtain.SDK.1.0.0.9\lib\net452\Murtain.SDK.dll</HintPath>
     </Reference>
-    <Reference Include="Murtain.Web, Version=1.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Murtain.Web.1.0.0.9\lib\net452\Murtain.Web.dll</HintPath>
+    <Reference Include="Murtain.Web, Version=1.0.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Murtain.Web.1.0.0.13\lib\net452\Murtain.Web.dll</HintPath>
     </Reference>
     <Reference Include="Murtain.Web.ApiDocument, Version=1.0.0.24, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Murtain.Web.ApiDocument.1.0.0.24\lib\net452\Murtain.Web.ApiDocument.dll</HintPath>
@@ -413,6 +413,8 @@
           <DevelopmentServerPort>64495</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:64495/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:64495/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

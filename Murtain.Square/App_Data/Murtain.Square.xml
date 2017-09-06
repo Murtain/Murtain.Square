@@ -4,6 +4,21 @@
         <name>Murtain.Square</name>
     </assembly>
     <members>
+        <member name="F:Murtain.Square.WebApiExceptionReturnCode.INTERNAL_SERVER_ERROR">
+            <summary>
+            服务器上发生一般性错误
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.WebApiExceptionReturnCode.NOT_IMPLEMENTED">
+            <summary>
+            服务器不支持所请求的功能
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.WebApiExceptionReturnCode.GATEWAY_TIMEOUT">
+            <summary>
+            中间代理服务器在等待来自另一个代理或原始服务器的响应时已超时
+            </summary>
+        </member>
         <member name="T:Murtain.Square.Controllers.FocusController">
             <summary>
             任务清单

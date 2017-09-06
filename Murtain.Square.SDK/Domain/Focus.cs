@@ -16,28 +16,10 @@ namespace Murtain.Square.SDK.Domain
 {
     public class Focus
     {
-
-        public Focus()
-        {
-
-        }
-
-        public Focus(string content)
-        {
-            this.Content = content;
-        }
-
-        public Focus(long id, string content, Status status)
-        {
-            this.Id = id;
-            this.Content = content;
-            this.Status = status;
-        }
-
         /// <summary>
         /// 唯一标识
         /// </summary>
-        public long Id { get; set; }
+        public string key { get; set; }
         /// <summary>
         /// 内容
         /// </summary>
@@ -48,6 +30,10 @@ namespace Murtain.Square.SDK.Domain
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public Status Status { get; set; }
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime? CreateTime { get; set; }
     }
 
     /// <summary>

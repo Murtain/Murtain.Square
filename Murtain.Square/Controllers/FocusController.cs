@@ -77,7 +77,7 @@ namespace Murtain.Square.Controllers
         [Route("api/focus")]
         [ReturnCode(typeof(FETCH_FOCUS_RETURN_CODE))]
         [JsonSample(typeof(GetFocusSample))]
-        public async Task<IEnumerable<SDK.Domain.Focus>> GetFocusAsync()
+        public async Task<List<SDK.Domain.Focus>> GetFocusAsync()
         {
             return await focusApplicationService.GetFocusAsync();
         }

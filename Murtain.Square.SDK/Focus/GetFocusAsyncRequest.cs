@@ -40,11 +40,16 @@ namespace Murtain.Square.SDK.Focus
         public object GetResponseSampleModel()
         {
             return new List<SDK.Domain.Focus> {
-                new SDK.Domain.Focus(1,"Don't let perfection become procrastination. Do it now.",Domain.Status.Completed),
-                new SDK.Domain.Focus(2,"The wisest mind has something yet to learn.",Domain.Status.Normal),
-                new SDK.Domain.Focus(3,"Develop success from failures. Discouragement and failure are two of the surest stepping stones to success.",Domain.Status.Expired),
-                new SDK.Domain.Focus(4,"Optimism is a happiness magnet. If you stay positive, good things and good people will be drawn to you.",Domain.Status.Normal),
-
+                new SDK.Domain.Focus{
+                    key = "1",
+                    Content = "Don't let perfection become procrastination. Do it now.",
+                    Status = Domain.Status.Completed
+                },
+                new SDK.Domain.Focus{
+                    key = "2",
+                    Content = "The wisest mind has something yet to learn.",
+                    Status = Domain.Status.Normal
+                }
             };
         }
     }

@@ -2,6 +2,8 @@
 using Murtain.Dependency.ConventionalRegistrars;
 using Murtain.Auditing.Startup;
 using Murtain.Configuration.Startup;
+using Murtain.Square.SDK;
+using Murtain.Square.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +13,16 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Murtain.Domain.Services;
+using Murtain.Collections;
+using Murtain.AutoMapper;
+using AutoMapper;
+using System.Net.Http;
 
 namespace Murtain.Square
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        private const string assemblyLoaderPartner = "Murtain.Square";
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -44,12 +51,23 @@ namespace Murtain.Square
                 config.UseAuditing();
                 config.UseAutoMapper();
 
-                config.RegisterWebMvcApplication(new ConventionalRegistrarConfig());
-                config.RegisterWebApiApplication();
+                config.RegisterWebApiApplication(assemblyLoaderPartner, new ConventionalRegistrarConfig());
             });
         }
-    }
+        protected virtual void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            {
+                //These headers are handling the "pre-flight" OPTIONS call sent by the browser
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
+                HttpContext.Current.Response.End();
+            }
+        }
 
+    }
 
     public class ConventionalRegistrarConfig : Autofac.Module
     {

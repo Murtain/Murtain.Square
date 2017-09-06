@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Murtain.Square.SDK;
 using Murtain.AutoMapper;
+using AutoMapper;
 
 namespace Murtain.Square.Application
 {
@@ -42,11 +43,10 @@ namespace Murtain.Square.Application
             await focusManager.FocusStarAsync(id);
         }
 
-        public async Task<IEnumerable<SDK.Domain.Focus>> GetFocusAsync()
+        public async Task<List<SDK.Domain.Focus>> GetFocusAsync()
         {
             var focuses = await focusManager.GetFocusAsync();
-
-            return focuses.MapTo<IEnumerable<SDK.Domain.Focus>>();
+            return focuses.MapTo<List<SDK.Domain.Focus>>();
         }
     }
 }

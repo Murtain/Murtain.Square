@@ -34,14 +34,14 @@ namespace Murtain.Square.Core
                 throw new UserFriendlyException(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
-            if (focus.Status == Status.Normal)
+            if (focus.Status == Status.Normal || focus.Status == Status.Focus)
             {
                 focus.Status = Status.Completed;
             }
 
-            if (focus.Status == Status.Completed || focus.Status == Status.Focus)
+            if (focus.Status == Status.Completed)
             {
-                focus.Status = Status.Completed;
+                focus.Status = Status.Normal;
             }
             await focusRepository.UpdatePropertyAsync(focus, x => new { x.Status });
         }
@@ -59,21 +59,46 @@ namespace Murtain.Square.Core
 
         public async Task FocusStarAsync(long id)
         {
-            var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
+
+
+            var focuses = focusRepository.Sources.Where(x => x.CreateTime > DateTime.Today).OrderByDescending(x => x.CreateTime);
+            var focus = focuses.FirstOrDefault(x => x.Id == id);
+
             if (focus == null)
             {
                 throw new UserFriendlyException(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);
             }
 
-            focus.Status = Status.Normal;
+            focus.Status = focus.Status == Status.Normal ? Status.Focus : Status.Normal;
+
             await focusRepository.UpdatePropertyAsync(focus, x => new { x.Status });
+
+            foreach (var f in focuses.Where(x => x.Id != focus.Id))
+            {
+                if (focus.Status == Status.Focus && f.Status == Status.Focus)
+                {
+                    f.Status = Status.Normal;
+                }
+
+                await focusRepository.UpdatePropertyAsync(f, x => new { x.Status });
+            }
+
+            if (focus.Status == Status.Normal)
+            {
+                var f = focuses.OrderByDescending(x => x.CreateTime).FirstOrDefault(x => x.Id != focus.Id && focus.Status == Status.Normal);
+
+                f.Status = Status.Focus;
+                f.CreateTime = DateTime.Now;
+                await focusRepository.UpdatePropertyAsync(f, x => new { x.Status });
+            }
+
         }
 
-        public async Task<IEnumerable<Domain.Entities.Focus>> GetFocusAsync()
+        public async Task<List<Domain.Entities.Focus>> GetFocusAsync()
         {
             var focuses = await focusRepository.GetAsync(x => x.CreateTime > DateTime.Today);
 
-            return focuses.OrderBy(x => x.Status).ToList();
+            return focuses.OrderByDescending(x => x.CreateTime).ToList();
         }
     }
 }

@@ -4,7 +4,7 @@
         <name>Murtain.Square.SDK</name>
     </assembly>
     <members>
-        <member name="P:Murtain.Square.SDK.Domain.Focus.Id">
+        <member name="P:Murtain.Square.SDK.Domain.Focus.key">
             <summary>
             唯一标识
             </summary>
@@ -17,6 +17,11 @@
         <member name="P:Murtain.Square.SDK.Domain.Focus.Status">
             <summary>
             任务状态
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Domain.Focus.CreateTime">
+            <summary>
+            创建时间
             </summary>
         </member>
         <member name="T:Murtain.Square.SDK.Domain.Status">
