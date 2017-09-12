@@ -1,6 +1,5 @@
 ﻿using Murtain.AutoMapper;
 using Murtain.Domain.Entities.Audited;
-using Murtain.Square.SDK.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,7 +12,7 @@ using AutoMapper;
 namespace Murtain.Square.Domain.Entities
 {
     [Table("Focus")]
-    [AutoMap(typeof(SDK.Domain.Focus))]
+    [AutoMap(typeof(SDK.Focus.Focus))]
     public class Focus : AuditedEntity, IAutoMaping
     {
         /// <summary>
@@ -24,11 +23,11 @@ namespace Murtain.Square.Domain.Entities
         /// <summary>
         /// 任务状态
         /// </summary>
-        public Status Status { get; set; }
+        public SDK.Focus.Status Status { get; set; }
 
         public void CreateMappings(IMapperConfigurationExpression configuration)
         {
-            configuration.CreateMap<Domain.Entities.Focus, SDK.Domain.Focus>()
+            configuration.CreateMap<Domain.Entities.Focus, SDK.Focus.Focus>()
                 .ForMember(x => x.key, opt => opt.MapFrom(m => m.Id.ToString()))
                 ;
         }

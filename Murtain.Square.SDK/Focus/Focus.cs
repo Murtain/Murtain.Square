@@ -12,7 +12,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Murtain.Square.SDK.Domain
+namespace Murtain.Square.SDK.Focus
 {
     public class Focus
     {

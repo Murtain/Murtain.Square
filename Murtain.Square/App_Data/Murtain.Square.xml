@@ -24,7 +24,7 @@
             任务清单
             </summary>
         </member>
-        <member name="M:Murtain.Square.Controllers.FocusController.FocusAddAsync(Murtain.Square.SDK.Focus.FocusAddAsyncRequest)">
+        <member name="M:Murtain.Square.Controllers.FocusController.FocusAddAsync(Murtain.Square.SDK.Focus.FocusInsertAsyncRequest)">
             <summary>
             添加任务
             </summary>
@@ -69,10 +69,17 @@
             名人名言
             </summary>
         </member>
-        <member name="M:Murtain.Square.Controllers.SenetenceController.GetAsync">
+        <member name="M:Murtain.Square.Controllers.SenetenceController.GetSentenceRandomAsync">
             <summary>
             获取一条名人名言（随机）
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Murtain.Square.Controllers.SenetenceController.SentenceFavoriteAsync(Murtain.Square.SDK.Sentence.SentenceFavoriteAsyncRequest)">
+            <summary>
+            收藏/取消收藏名言
+            </summary>
+            <param name="input"></param>
             <returns></returns>
         </member>
         <member name="T:Murtain.Square.Controllers.WeatherController">
@@ -128,41 +135,6 @@
         <member name="F:Murtain.Square.Models.FETCH_CITY_RETURN_CODE.SINA_CITY_QUERY_SERVICE_NOT_UNAVAILABLE">
             <summary>
             新浪城市查询服务不可用
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.SentenceResponse.result">
-            <summary>
-            返回结果
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.SentenceResponse.error_code">
-            <summary>
-            错误码
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.SentenceResponse.reason">
-            <summary>
-            错误原因
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.Sentence.famous_name">
-            <summary>
-            姓名
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.Sentence.famous_saying">
-            <summary>
-            名言
-            </summary>
-        </member>
-        <member name="F:Murtain.Square.Models.FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED">
-            <summary>
-            阿凡达名人名言查询失败
-            </summary>
-        </member>
-        <member name="F:Murtain.Square.Models.FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE">
-            <summary>
-            阿凡达名人名言服务不可用
             </summary>
         </member>
         <member name="T:Murtain.Square.Models.WeatherRealTime">

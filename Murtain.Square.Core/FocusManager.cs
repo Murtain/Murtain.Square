@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Murtain.Square.Domain.Entities;
 using Murtain.Web.Exceptions;
 using Murtain.Square.SDK;
-using Murtain.Square.SDK.Domain;
+using Murtain.Square.SDK.Focus;
 
 namespace Murtain.Square.Core
 {
@@ -30,6 +30,7 @@ namespace Murtain.Square.Core
         {
             var focuses = focusRepository.Sources.Where(x => x.CreateTime > DateTime.Today).OrderBy(x => x.Status).ThenBy(x => x.Id);
             var focus = await focusRepository.FirstOrDefaultAsync(x => x.Id == id);
+
             if (focus == null)
             {
                 throw new UserFriendlyException(FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT);

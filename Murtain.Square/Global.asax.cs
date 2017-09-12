@@ -2,8 +2,9 @@
 using Murtain.Dependency.ConventionalRegistrars;
 using Murtain.Auditing.Startup;
 using Murtain.Configuration.Startup;
-using Murtain.Square.SDK;
 using Murtain.Square.Domain;
+using Murtain.Square.SDK.Sentence;
+using Murtain.Square.SDK.Focus;
 using System;
 using System.Collections.Generic;
 using System.Linq;

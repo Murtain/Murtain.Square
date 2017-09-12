@@ -1,6 +1,5 @@
 ﻿using Murtain.SDK.Attributes;
 using Murtain.Square.Application;
-using Murtain.Square.SDK.Domain;
 using Murtain.Square.SDK.Focus;
 using System;
 using System.Collections.Generic;
@@ -30,9 +29,9 @@ namespace Murtain.Square.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/focus")]
-        [ReturnCode(typeof(FOCUS_ADD_RETURN_CODE))]
-        [JsonSample(typeof(FocusAddSample))]
-        public async Task FocusAddAsync([FromBody] FocusAddAsyncRequest input)
+        [ReturnCode(typeof(FOCUS_INSERT_RETURN_CODE))]
+        [JsonSample(typeof(FocusInsertAsyncSample))]
+        public async Task FocusAddAsync([FromBody] FocusInsertAsyncRequest input)
         {
             await focusApplicationService.FocusAddAsync(input.Content);
         }
@@ -75,9 +74,9 @@ namespace Murtain.Square.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/focus")]
-        [ReturnCode(typeof(FETCH_FOCUS_RETURN_CODE))]
-        [JsonSample(typeof(GetFocusSample))]
-        public async Task<List<SDK.Domain.Focus>> GetFocusAsync()
+        [ReturnCode(typeof(FOCUS_FETCH_RETURN_CODE))]
+        [JsonSample(typeof(FocusFetchAsyncSample))]
+        public async Task<List<SDK.Focus.Focus>> GetFocusAsync()
         {
             return await focusApplicationService.GetFocusAsync();
         }
@@ -87,7 +86,7 @@ namespace Murtain.Square.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("api/focus-star")]
-        public async Task<SDK.Domain.Focus> GetFocusStarAsync()
+        public async Task<SDK.Focus.Focus> GetFocusStarAsync()
         {
             return await focusApplicationService.GetFocusStarAsync();
         }

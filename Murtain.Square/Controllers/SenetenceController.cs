@@ -1,5 +1,7 @@
 ﻿using Murtain.SDK.Attributes;
+using Murtain.Square.Application;
 using Murtain.Square.Models;
+using Murtain.Square.SDK.Sentence;
 using Murtain.Web.Exceptions;
 using Newtonsoft.Json;
 using System;
@@ -18,39 +20,38 @@ namespace Murtain.Square.Controllers
     /// </summary>
     public class SenetenceController : ApiController
     {
+
+        private ISentenceApplicationService sentenceApplicationService;
+
+        public SenetenceController(ISentenceApplicationService sentenceApplicationService)
+        {
+            this.sentenceApplicationService = sentenceApplicationService;
+        }
         /// <summary>
         /// 获取一条名人名言（随机）
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         [Route("api/senetences/random")]
-        [ReturnCode(typeof(FETCH_SENTENCE_RETURN_CODE))]
+        [ReturnCode(typeof(SENTENCE_FETCH_RETURN_CODE))]
         [JsonSample(typeof(SentenceSample))]
-        public async Task<Sentence> GetAsync()
+        public async Task<Sentence> GetSentenceRandomAsync()
         {
-            try
-            {
-                HttpClient client = new HttpClient();
-                var response = await client.GetStringAsync("http://api.avatardata.cn/MingRenMingYan/Random?key=f6b68de085ca48cca0d018c82f01c9cc");
+            return await sentenceApplicationService.GetSentenceRandomAsync();
+        }
 
-                if (string.IsNullOrEmpty(response))
-                {
-                    return null;
-                }
+        /// <summary>
+        /// 收藏/取消收藏名言
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("api/senetences/favorite")]
+        [ReturnCode(typeof(SENTENCE_FAVORITE_RETURN_CODE))]
 
-                var resp = JsonConvert.DeserializeObject<SentenceResponse>(response);
-
-                if (resp.error_code != 0 || resp == null)
-                {
-                    throw new UserFriendlyException(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED);
-                }
-
-                return resp.result;
-            }
-            catch (WebException)
-            {
-                throw new UserFriendlyException(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE);
-            }
+        public async Task SentenceFavoriteAsync([FromBody]SentenceFavoriteAsyncRequest input)
+        {
+            await sentenceApplicationService.SentenceFavoriteAsync(input);
         }
     }
 }

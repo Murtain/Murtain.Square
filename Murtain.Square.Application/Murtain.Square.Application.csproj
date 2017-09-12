@@ -91,7 +91,9 @@
   <ItemGroup>
     <Compile Include="FocusApplicationService.cs" />
     <Compile Include="IFocusApplicationService.cs" />
+    <Compile Include="ISentenceApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SentenceApplicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

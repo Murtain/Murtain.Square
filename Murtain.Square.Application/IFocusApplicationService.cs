@@ -13,7 +13,7 @@ namespace Murtain.Square.Application
         Task FocusRemoveAsync(long id);
         Task FocusToggleCompletedAsync(long id);
         Task FocusStarAsync(long id);
-        Task<List<SDK.Domain.Focus>> GetFocusAsync();
-        Task<SDK.Domain.Focus> GetFocusStarAsync();
+        Task<List<SDK.Focus.Focus>> GetFocusAsync();
+        Task<SDK.Focus.Focus> GetFocusStarAsync();
     }
 }

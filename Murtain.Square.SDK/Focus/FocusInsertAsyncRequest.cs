@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Murtain.Square.SDK.Focus
 {
-    public class FocusAddAsyncRequest
+    public class FocusInsertAsyncRequest
     {
         /// <summary>
         /// 任务内容
@@ -21,7 +21,7 @@ namespace Murtain.Square.SDK.Focus
         public string Content { get; set; }
     }
 
-    public enum FOCUS_ADD_RETURN_CODE
+    public enum FOCUS_INSERT_RETURN_CODE
     {
         /// <summary>
         /// 已过期
@@ -31,11 +31,11 @@ namespace Murtain.Square.SDK.Focus
         FOCUS_ADD_FAILED
     }
 
-    public class FocusAddSample : IJsonSampleModel
+    public class FocusInsertAsyncSample : IJsonSampleModel
     {
         public object GetErrorSampleModel()
         {
-            return new ResponseContentModel(FOCUS_ADD_RETURN_CODE.FOCUS_ADD_FAILED, "api/foucs");
+            return new ResponseContentModel(FOCUS_INSERT_RETURN_CODE.FOCUS_ADD_FAILED, "api/foucs");
         }
 
         public object GetRequestSampleModel()

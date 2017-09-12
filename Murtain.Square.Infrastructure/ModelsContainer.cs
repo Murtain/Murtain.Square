@@ -28,6 +28,7 @@ namespace Murtain.Square.Infrastructure
             DbInterception.Add(new EntityFrameworkDbCommandInterceptor());
         }
 
-        public virtual DbSet<Focus> Todo { get; set; }
+        public virtual DbSet<Focus> Focus { get; set; }
+        public virtual DbSet<Sentence> Sentence { get; set; }
     }
 }

@@ -48,11 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Focus.cs" />
-    <Compile Include="Focus\FocusAddAsyncRequest.cs" />
-    <Compile Include="Focus\GetFocusAsyncRequest.cs" />
-    <Compile Include="Focus\GetFocusStarAsync.cs" />
+    <Compile Include="Focus\Focus.cs" />
+    <Compile Include="Focus\FocusFetchAsyncRequest.cs" />
+    <Compile Include="Focus\FocusInsertAsyncRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sentence\Sentence.cs" />
+    <Compile Include="Sentence\SentenceFavoriteAsyncRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

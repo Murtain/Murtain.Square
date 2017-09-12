@@ -4,74 +4,139 @@
         <name>Murtain.Square.SDK</name>
     </assembly>
     <members>
-        <member name="P:Murtain.Square.SDK.Domain.Focus.key">
+        <member name="P:Murtain.Square.SDK.Focus.Focus.key">
             <summary>
             唯一标识
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Domain.Focus.Content">
+        <member name="P:Murtain.Square.SDK.Focus.Focus.Content">
             <summary>
             内容
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Domain.Focus.Status">
+        <member name="P:Murtain.Square.SDK.Focus.Focus.Status">
             <summary>
             任务状态
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Domain.Focus.CreateTime">
+        <member name="P:Murtain.Square.SDK.Focus.Focus.CreateTime">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="T:Murtain.Square.SDK.Domain.Status">
+        <member name="T:Murtain.Square.SDK.Focus.Status">
             <summary>
             任务状态
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.Status.Focus">
+        <member name="F:Murtain.Square.SDK.Focus.Status.Focus">
             <summary>
             焦点任务
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.Status.Normal">
+        <member name="F:Murtain.Square.SDK.Focus.Status.Normal">
             <summary>
             正常
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.Status.Completed">
+        <member name="F:Murtain.Square.SDK.Focus.Status.Completed">
             <summary>
             已完成
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.Status.Expired">
+        <member name="F:Murtain.Square.SDK.Focus.Status.Expired">
             <summary>
             已过期
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT">
+        <member name="F:Murtain.Square.SDK.Focus.FOCUS_COMPLETED_RETURN_CODE.FOCUS_NOT_EXSIT">
             <summary>
             任务不存在
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Domain.FOCUS_REMOVE_RETURN_CODE.FOCUS_NOT_EXSIT">
+        <member name="F:Murtain.Square.SDK.Focus.FOCUS_REMOVE_RETURN_CODE.FOCUS_NOT_EXSIT">
             <summary>
             任务不存在
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Focus.FocusAddAsyncRequest.Content">
+        <member name="F:Murtain.Square.SDK.Focus.FOCUS_FETCH_RETURN_CODE.FOCUS_FETCH_FAILED">
+            <summary>
+            任务清单查询失败
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Focus.FocusInsertAsyncRequest.Content">
             <summary>
             任务内容
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Focus.FOCUS_ADD_RETURN_CODE.FOCUS_ADD_FAILED">
+        <member name="F:Murtain.Square.SDK.Focus.FOCUS_INSERT_RETURN_CODE.FOCUS_ADD_FAILED">
             <summary>
             已过期
             </summary>
         </member>
-        <member name="F:Murtain.Square.SDK.Focus.FETCH_FOCUS_RETURN_CODE.FOCUS_FETCH_FAILED">
+        <member name="T:Murtain.Square.SDK.Sentence.Sentence">
             <summary>
-            任务清单查询失败
+            名言
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.Sentence.FamousName">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.Sentence.FamousSaying">
+            <summary>
+            名言
+            </summary>
+        </member>
+        <member name="T:Murtain.Square.SDK.Sentence.SentenceFetchResponse">
+            <summary>
+            名言请求
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.result">
+            <summary>
+            返回结果
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.error_code">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.reason">
+            <summary>
+            错误原因
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Sentence.SENTENCE_FETCH_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED">
+            <summary>
+            阿凡达名人名言查询失败
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Sentence.SENTENCE_FETCH_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE">
+            <summary>
+            阿凡达名人名言服务不可用
+            </summary>
+        </member>
+        <member name="T:Murtain.Square.SDK.Sentence.SentenceFavoriteAsyncRequest">
+            <summary>
+            名言收藏
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFavoriteAsyncRequest.FamousName">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFavoriteAsyncRequest.FamousSaying">
+            <summary>
+            名言
+            </summary>
+        </member>
+        <member name="F:Murtain.Square.SDK.Sentence.SENTENCE_FAVORITE_RETURN_CODE.SENTENCE_FAVORITE_FAILED">
+            <summary>
+            名言收藏失败
             </summary>
         </member>
     </members>

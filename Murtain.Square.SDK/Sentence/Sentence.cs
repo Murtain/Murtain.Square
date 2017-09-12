@@ -9,14 +9,28 @@ using System.Linq;
 using System.Net;
 using System.Web;
 
-namespace Murtain.Square.Models
+namespace Murtain.Square.SDK.Sentence
 {
-    public class SentenceRequest
-    {
 
+    /// <summary>
+    /// 名言
+    /// </summary>
+    public class Sentence
+    {
+        /// <summary>
+        /// 姓名
+        /// </summary>
+        public string FamousName { get; set; }
+        /// <summary>
+        /// 名言
+        /// </summary>
+        public string FamousSaying { get; set; }
     }
 
-    public class SentenceResponse
+    /// <summary>
+    /// 名言请求
+    /// </summary>
+    public class SentenceFetchResponse
     {
         /// <summary>
         /// 返回结果
@@ -32,19 +46,7 @@ namespace Murtain.Square.Models
         public string reason { get; set; }
     }
 
-    public class Sentence
-    {
-        /// <summary>
-        /// 姓名
-        /// </summary>
-        public string famous_name { get; set; }
-        /// <summary>
-        /// 名言
-        /// </summary>
-        public string famous_saying { get; set; }
-    }
-
-    public enum FETCH_SENTENCE_RETURN_CODE
+    public enum SENTENCE_FETCH_RETURN_CODE
     {
 
         /// <summary>
@@ -66,7 +68,7 @@ namespace Murtain.Square.Models
     {
         public object GetErrorSampleModel()
         {
-            return new ResponseContentModel(FETCH_SENTENCE_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE, "api/senetences/");
+            return new ResponseContentModel(SENTENCE_FETCH_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_NOT_UNAVAILABLE, "api/senetences/");
         }
 
         public object GetRequestSampleModel()
@@ -78,8 +80,8 @@ namespace Murtain.Square.Models
         {
             return new Sentence
             {
-                famous_name = "欧文",
-                famous_saying = "真理惟一可靠的标准就是永远自相符合。"
+                FamousName = "欧文",
+                FamousSaying = "真理惟一可靠的标准就是永远自相符合。"
             };
         }
     }

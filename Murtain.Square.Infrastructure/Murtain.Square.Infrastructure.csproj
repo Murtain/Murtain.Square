@@ -98,6 +98,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201708140849400_00.cs" />
+    <Compile Include="Migrations\201708140849400_00.Designer.cs">
+      <DependentUpon>201708140849400_00.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709120903484_01.cs" />
+    <Compile Include="Migrations\201709120903484_01.Designer.cs">
+      <DependentUpon>201709120903484_01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\SentenceRepository.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="ModelsContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +122,14 @@
       <Project>{3816D3CB-F8C5-437D-80A1-CB9B0531D030}</Project>
       <Name>Murtain.Square.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708140849400_00.resx">
+      <DependentUpon>201708140849400_00.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120903484_01.resx">
+      <DependentUpon>201709120903484_01.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

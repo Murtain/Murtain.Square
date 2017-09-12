@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Murtain.Square.SDK.Focus
 {
-    public class GetFocusAsyncRequest
+    public class FocusFetchAsyncRequest
     {
 
     }
 
-    public enum FETCH_FOCUS_RETURN_CODE
+    public enum FOCUS_FETCH_RETURN_CODE
     {
         /// <summary>
         /// 任务清单查询失败
@@ -25,11 +25,11 @@ namespace Murtain.Square.SDK.Focus
         FOCUS_FETCH_FAILED
     }
 
-    public class GetFocusSample : IJsonSampleModel
+    public class FocusFetchAsyncSample : IJsonSampleModel
     {
         public object GetErrorSampleModel()
         {
-            return new ResponseContentModel(FETCH_FOCUS_RETURN_CODE.FOCUS_FETCH_FAILED, "api/foucs");
+            return new ResponseContentModel(FOCUS_FETCH_RETURN_CODE.FOCUS_FETCH_FAILED, "api/foucs");
         }
 
         public object GetRequestSampleModel()
@@ -39,16 +39,16 @@ namespace Murtain.Square.SDK.Focus
 
         public object GetResponseSampleModel()
         {
-            return new List<SDK.Domain.Focus> {
-                new SDK.Domain.Focus{
+            return new List<Focus> {
+                new Focus{
                     key = "1",
                     Content = "Don't let perfection become procrastination. Do it now.",
-                    Status = Domain.Status.Completed
+                    Status = Status.Completed
                 },
-                new SDK.Domain.Focus{
+                new Focus{
                     key = "2",
                     Content = "The wisest mind has something yet to learn.",
-                    Status = Domain.Status.Normal
+                    Status = Status.Normal
                 }
             };
         }

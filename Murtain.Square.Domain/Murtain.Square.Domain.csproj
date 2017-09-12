@@ -89,10 +89,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Sentence.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Entities\Focus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IFocusRepository.cs" />
+    <Compile Include="Repositories\ISentenceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
