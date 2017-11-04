@@ -10,6 +10,7 @@ using System.Net;
 using Murtain.Square.Core;
 using Murtain.Square.SDK.Sentence;
 using Murtain.AutoMapper;
+using Murtain.Threading;
 
 namespace Murtain.Square.Application
 {
@@ -27,8 +28,11 @@ namespace Murtain.Square.Application
         {
             try
             {
-                HttpClient client = new HttpClient();
-                var response = await client.GetStringAsync("http://api.avatardata.cn/MingRenMingYan/Random?key=f6b68de085ca48cca0d018c82f01c9cc");
+                var response = AsyncHelper.RunSync(async () =>
+                {
+                    HttpClient client = new HttpClient();
+                    return await client.GetStringAsync("http://api.avatardata.cn/MingRenMingYan/Random?key=f6b68de085ca48cca0d018c82f01c9cc");
+                });
 
                 if (string.IsNullOrEmpty(response))
                 {
@@ -37,12 +41,12 @@ namespace Murtain.Square.Application
 
                 var resp = JsonConvert.DeserializeObject<SentenceFetchResponse>(response);
 
-                if (resp.error_code != 0 || resp == null)
+                if (resp.ReturnCode != 0 || resp == null)
                 {
                     throw new UserFriendlyException(SENTENCE_FETCH_RETURN_CODE.AVATAR_DATA_FETCH_FAMOUS_FAILED);
                 }
 
-                return resp.result;
+                return await Task.FromResult(resp.Sentence);
             }
             catch (WebException)
             {

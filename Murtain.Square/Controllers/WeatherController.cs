@@ -73,7 +73,8 @@ namespace Murtain.Square.Controllers
             try
             {
                 HttpClient client = new HttpClient();
-                var response = await client.GetStringAsync("http://api.avatardata.cn/Weather/Query?key=32bb75acfc3d4decbf7ee3b8d664fc47&cityname=" + city_name);
+                client.DefaultRequestHeaders.Add("Authorization", "APPCODE 1eab80f810ec47688398a4b50a4e2b48");
+                var response = await client.GetStringAsync("http://jisutqybmf.market.alicloudapi.com/weather/query?city=" + city_name);
 
                 if (string.IsNullOrEmpty(response))
                 {
@@ -82,9 +83,9 @@ namespace Murtain.Square.Controllers
 
                 var resp = JsonConvert.DeserializeObject<FetchWeatherResponse>(response);
 
-                if (resp.error_code != 0 || resp == null)
+                if (resp == null || resp.status != "0")
                 {
-                    throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_FAILED);
+                    throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.FETCH_WEATHER_FAILED);
                 }
 
                 return resp.result;
@@ -92,7 +93,7 @@ namespace Murtain.Square.Controllers
             }
             catch (WebException)
             {
-                throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE);
+                throw new UserFriendlyException(FETCH_WEATHER_RETURN_CODE.FETCH_WEATHER_NOT_UNAVAILABLE);
             }
         }
 

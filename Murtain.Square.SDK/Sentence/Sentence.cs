@@ -2,6 +2,7 @@
 using Murtain.SDK.Attributes;
 using Murtain.SDK.Models;
 using Murtain.Web.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +21,12 @@ namespace Murtain.Square.SDK.Sentence
         /// <summary>
         /// 姓名
         /// </summary>
+        [JsonProperty("famous_name")]
         public string FamousName { get; set; }
         /// <summary>
         /// 名言
         /// </summary>
+        [JsonProperty("famous_saying")]
         public string FamousSaying { get; set; }
     }
 
@@ -35,15 +38,18 @@ namespace Murtain.Square.SDK.Sentence
         /// <summary>
         /// 返回结果
         /// </summary>
-        public Sentence result { get; set; }
+        [JsonProperty("result")]
+        public Sentence Sentence { get; set; }
         /// <summary>
         /// 错误码
         /// </summary>
-        public int error_code { get; set; }
+        [JsonProperty("error_code")]
+        public int ReturnCode { get; set; }
         /// <summary>
         /// 错误原因
         /// </summary>
-        public string reason { get; set; }
+        [JsonProperty("reason")]
+        public string Reason { get; set; }
     }
 
     public enum SENTENCE_FETCH_RETURN_CODE

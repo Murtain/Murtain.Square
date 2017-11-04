@@ -137,54 +137,24 @@
             新浪城市查询服务不可用
             </summary>
         </member>
-        <member name="T:Murtain.Square.Models.WeatherRealTime">
-            <summary>
-            实时天气
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherRealTime.city_name">
-            <summary>
-            城市名称
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherRealTime.weather">
-            <summary>
-            天气详情
-            </summary>
-        </member>
-        <member name="T:Murtain.Square.Models.WeatherDetail">
-            <summary>
-            天气详情
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherDetail.humidity">
-            <summary>
-            湿度
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherDetail.temperature">
-            <summary>
-            温度
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherDetail.info">
-            <summary>
-            天气（晴，多云，雨）
-            </summary>
-        </member>
-        <member name="P:Murtain.Square.Models.WeatherDetail.img">
-            <summary>
-            图片资源ID
-            </summary>
-        </member>
         <member name="T:Murtain.Square.Models.Weather">
             <summary>
             天气信息
             </summary>
         </member>
-        <member name="P:Murtain.Square.Models.Weather.realtime">
+        <member name="P:Murtain.Square.Models.Weather.city">
             <summary>
-            实时天气信息
+            城市
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.Models.Weather.weather">
+            <summary>
+            天气
+            </summary>
+        </member>
+        <member name="P:Murtain.Square.Models.Weather.temp">
+            <summary>
+            温度
             </summary>
         </member>
         <member name="T:Murtain.Square.Models.FetchWeatherResponse">
@@ -197,24 +167,24 @@
             返回结果
             </summary>
         </member>
-        <member name="P:Murtain.Square.Models.FetchWeatherResponse.error_code">
+        <member name="P:Murtain.Square.Models.FetchWeatherResponse.status">
             <summary>
-            错误码
+            状态码
             </summary>
         </member>
-        <member name="P:Murtain.Square.Models.FetchWeatherResponse.reason">
+        <member name="P:Murtain.Square.Models.FetchWeatherResponse.msg">
             <summary>
-            错误原因
+            附加消息
             </summary>
         </member>
-        <member name="F:Murtain.Square.Models.FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_FAILED">
+        <member name="F:Murtain.Square.Models.FETCH_WEATHER_RETURN_CODE.FETCH_WEATHER_FAILED">
             <summary>
-            阿凡达天气查询失败
+            天气查询失败
             </summary>
         </member>
-        <member name="F:Murtain.Square.Models.FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE">
+        <member name="F:Murtain.Square.Models.FETCH_WEATHER_RETURN_CODE.FETCH_WEATHER_NOT_UNAVAILABLE">
             <summary>
-            阿凡达天气查询数据服务不可用
+            天气查询数据服务不可用
             </summary>
         </member>
         <member name="F:Murtain.Square.Models.FETCH_WEATHER_AUTO_RETURN_CODE.FETCH_CLIENT_IP_CITY_FALIED">

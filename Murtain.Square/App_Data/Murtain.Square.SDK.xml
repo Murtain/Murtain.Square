@@ -94,17 +94,17 @@
             名言请求
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.result">
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.Sentence">
             <summary>
             返回结果
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.error_code">
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.ReturnCode">
             <summary>
             错误码
             </summary>
         </member>
-        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.reason">
+        <member name="P:Murtain.Square.SDK.Sentence.SentenceFetchResponse.Reason">
             <summary>
             错误原因
             </summary>

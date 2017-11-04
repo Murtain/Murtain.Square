@@ -12,52 +12,22 @@ using System.Web;
 namespace Murtain.Square.Models
 {
     /// <summary>
-    /// 实时天气
-    /// </summary>
-    public class WeatherRealTime
-    {
-        /// <summary>
-        /// 城市名称
-        /// </summary>
-        public string city_name { get; set; }
-        /// <summary>
-        /// 天气详情
-        /// </summary>
-        public WeatherDetail weather { get; set; }
-    }
-
-    /// <summary>
-    /// 天气详情
-    /// </summary>
-    public class WeatherDetail
-    {
-        /// <summary>
-        /// 湿度
-        /// </summary>
-        public int? humidity { get; set; }
-        /// <summary>
-        /// 温度
-        /// </summary>
-        public int? temperature { get; set; }
-        /// <summary>
-        /// 天气（晴，多云，雨）
-        /// </summary>
-        public string info { get; set; }
-        /// <summary>
-        /// 图片资源ID
-        /// </summary>
-        public int? img { get; set; }
-    }
-
-    /// <summary>
     /// 天气信息
     /// </summary>
     public class Weather
     {
         /// <summary>
-        /// 实时天气信息
+        /// 城市
         /// </summary>
-        public WeatherRealTime realtime { get; set; }
+        public string city { get; set; }
+        /// <summary>
+        /// 天气
+        /// </summary>
+        public string weather { get; set; }
+        /// <summary>
+        /// 温度
+        /// </summary>
+        public string temp { get; set; }
     }
 
     /// <summary>
@@ -70,29 +40,29 @@ namespace Murtain.Square.Models
         /// </summary>
         public Weather result { get; set; }
         /// <summary>
-        /// 错误码
+        /// 状态码
         /// </summary>
-        public int error_code { get; set; }
+        public string status { get; set; }
         /// <summary>
-        /// 错误原因
+        /// 附加消息
         /// </summary>
-        public string reason { get; set; }
+        public string msg { get; set; }
     }
 
     public enum FETCH_WEATHER_RETURN_CODE
     {
         /// <summary>
-        /// 阿凡达天气查询失败
+        /// 天气查询失败
         /// </summary>
-        [Description("阿凡达天气查询失败")]
+        [Description("天气查询失败")]
         [HttpCorresponding(HttpStatusCode.Forbidden)]
-        AVATAR_DATA_FETCH_WEATHER_FAILED,
+        FETCH_WEATHER_FAILED,
         /// <summary>
-        /// 阿凡达天气查询数据服务不可用
+        /// 天气查询数据服务不可用
         /// </summary>
-        [Description("阿凡达天气查询数据服务不可用")]
+        [Description("天气查询数据服务不可用")]
         [HttpCorresponding(HttpStatusCode.Forbidden)]
-        AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE,
+        FETCH_WEATHER_NOT_UNAVAILABLE,
     }
 
     public enum FETCH_WEATHER_AUTO_RETURN_CODE
@@ -115,7 +85,7 @@ namespace Murtain.Square.Models
     {
         public object GetErrorSampleModel()
         {
-            return new ResponseContentModel(FETCH_WEATHER_RETURN_CODE.AVATAR_DATA_FETCH_WEATHER_NOT_UNAVAILABLE, "api/weather");
+            return new ResponseContentModel(FETCH_WEATHER_RETURN_CODE.FETCH_WEATHER_NOT_UNAVAILABLE, "api/weather");
         }
 
         public object GetRequestSampleModel()
@@ -127,17 +97,9 @@ namespace Murtain.Square.Models
         {
             return new Weather
             {
-                realtime = new WeatherRealTime
-                {
-                    city_name = "上海",
-                    weather = new WeatherDetail
-                    {
-                        humidity = 54,
-                        img = 1,
-                        info = "多云",
-                        temperature = 35
-                    }
-                }
+                city = "上海",
+                weather = "多云",
+                temp = "24"
             };
         }
     }
@@ -158,17 +120,9 @@ namespace Murtain.Square.Models
         {
             return new Weather
             {
-                realtime = new WeatherRealTime
-                {
-                    city_name = "上海",
-                    weather = new WeatherDetail
-                    {
-                        humidity = 54,
-                        img = 1,
-                        info = "多云",
-                        temperature = 35
-                    }
-                }
+                city = "上海",
+                weather = "多云",
+                temp = "24"
             };
         }
     }

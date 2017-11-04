@@ -1,5 +1,6 @@
 ﻿using Murtain.SDK.Attributes;
 using Murtain.SDK.Models;
+using Murtain.Web;
 using Murtain.Web.Attributes;
 using Murtain.Web.ContractResolver;
 using Murtain.Web.Exceptions;
@@ -8,11 +9,15 @@ using Murtain.Web.MessageHandlers;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.Filters;
@@ -52,7 +57,6 @@ namespace Murtain.Square
             config.MessageHandlers.Add(new DefaultHandler());
         }
     }
-
 
     public class WebApiExceptionFilterAttribute : ExceptionFilterAttribute
     {

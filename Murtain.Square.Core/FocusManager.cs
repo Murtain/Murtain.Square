@@ -24,6 +24,18 @@ namespace Murtain.Square.Core
         public async Task FocusAddAsync(Domain.Entities.Focus focus)
         {
             await focusRepository.AddAsync(focus);
+
+            var starFocus = focusRepository.FirstOrDefault(x => x.Status == Status.Focus && x.CreateTime > DateTime.Today);
+
+            if (starFocus == null)
+            {
+                var nextFocus = focusRepository.Sources.OrderBy(x => x.Status).ThenBy(x => x.Id).FirstOrDefault(x => x.Status == Status.Normal && x.CreateTime > DateTime.Today);
+                if (nextFocus != null)
+                {
+                    nextFocus.Status = Status.Focus;
+                    await focusRepository.UpdatePropertyAsync(nextFocus, x => new { x.Status });
+                } 
+            }
         }
 
         public async Task FocusToggleCompletedAsync(long id)
